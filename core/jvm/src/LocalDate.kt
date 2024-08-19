@@ -92,7 +92,7 @@ public actual class LocalDate internal constructor(
     @LowPriorityInOverloadResolution
     internal fun toEpochDays(): Int = value.toEpochDay().clampToInt()
 
-    private fun writeReplace(): Any = SerializedValue(SerializedValue.DATE_TAG, this)
+    private fun writeReplace(): Any = Ser(Ser.DATE_TAG, this)
 }
 
 @Deprecated("Use the plus overload with an explicit number of units", ReplaceWith("this.plus(1, unit)"))
